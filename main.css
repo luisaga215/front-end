@@ -1,0 +1,34 @@
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: relative;
+}
+
+.modo {
+    bottom: 0;
+    color: #666666;
+    font-size: 2em;
+    position: absolute;
+    text-align: right;
+}
+
+.img_l img {
+    background-color: white;
+    bottom: 0;
+    position: absolute;
+}
+
+hr {
+    background-color: #c8523b;
+    border: none;
+    height: 1px;
+    position: relative;
+}
+
+body {
+    background-color: #F4F3EF;
+}
