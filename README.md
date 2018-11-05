@@ -1,7 +1,7 @@
 # front-end
 
 <p>
-  <img src="./assets/ternium_logo.png" alt="ternium"/>
+  <img src="./assets/Ternium_logo.png" alt="ternium"/>
 </p>
 
 Semestre i
