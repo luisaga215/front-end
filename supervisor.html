@@ -8,14 +8,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="supervisor.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="media.css">
+
     <style type="text/css">
-        .div_mapas{
+        .div_mapas {
             background-color: red;
+            height: 400px;
         }
-        .div_activos{
-            background-color: black;
+
+        #div_activos {
+            background-color: white;
+            height: 400px;
+        }
+
+        ul {
+
         }
 
     </style>
@@ -23,31 +32,27 @@
 
 <body>
     <div class="container-fluid">
-    <header>
-        <ul>
-            <li class="headr img_l logo"><img src="./assets/Ternium_logo.png" alt="Logo ternium" height="110px" width="260px">
-            </li>
-            <li class="headr modo">
-                <p>Supervisor</p>
-            </li>
-        </ul>
-    </header>
-    <hr>
+        <header>
+            <ul>
+                <li class="headr img_l logo"><img src="./assets/Ternium_logo.png" alt="Logo ternium" height="110px" width="260px">
+                </li>
+                <li class="headr modo">
+                    <p>Supervisor</p>
+                </li>
+            </ul>
+        </header>
+        <hr>
 
-    <div class="row">
-        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 div_mapas">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 div_mapas">
 
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 div_activos">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="div_activos">
 
+            </div>
         </div>
     </div>
 
-
-
-
-
-    </div>
 </body>
 
 </html>
