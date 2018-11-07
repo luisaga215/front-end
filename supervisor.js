@@ -29,11 +29,11 @@ $(document).ready(function () {
     document.getElementById("div_activos").appendChild(ul);
 
     employees.forEach(function (employees) {
-        var span = document.createElement('span');
-        span.setAttribute('class', "li_span");
+        var a = document.createElement('a');
+        a.setAttribute('href', "#");
         var li = document.createElement('li');
         ul.appendChild(li);
-        li.appendChild(span);
-        span.innerHTML += employees;
+        li.appendChild(a);
+        a.innerHTML += employees;
     });
 });

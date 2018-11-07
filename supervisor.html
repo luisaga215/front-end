@@ -29,7 +29,7 @@
             padding: 0;
         }
 
-        #div_activos span {
+        #div_activos a {
             position: relative;
             display: block;
             padding: .4em .4em .4em .8em;
@@ -42,11 +42,11 @@
             cursor: pointer;
         }
 
-        #div_activos span:hover {
+        #div_activos a:hover {
             background: #eee;
         }
 
-        #div_activos span:before {
+        #div_activos a:before {
             content:"";
             position: absolute;
             left: -2.5em;
@@ -58,7 +58,7 @@
             line-height: 2em;
         }
 
-        #div_activos span:after {
+        #div_activos a:after {
             position: absolute;
             content: '';
             border: .5em solid transparent;
@@ -68,7 +68,7 @@
             transition: all .3s ease-out;
         }
 
-        #div_activos span:hover:after {
+        #div_activos a:hover:after {
             left: -.5em;
             border-left-color: #fa8072;
         }
