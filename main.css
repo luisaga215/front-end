@@ -10,7 +10,7 @@ header {
 
 .modo {
     bottom: 0;
-    color: #666666;
+    color: #AACCFF;
     font-size: 2em;
     position: absolute;
     text-align: right;
@@ -23,12 +23,12 @@ header {
 }
 
 hr {
-    background-color: #c8523b;
+    background-color: #ddd;
     border: none;
     height: 1px;
     position: relative;
 }
 
 body {
-    background-color: #F4F3EF;
+    background-color: #222233;
 }

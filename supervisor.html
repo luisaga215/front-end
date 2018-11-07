@@ -19,14 +19,59 @@
         }
 
         #div_activos {
-            background-color: white;
             height: 400px;
+            overflow: auto;
         }
 
-        ul {
-
+        #div_activos ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
         }
 
+        #div_activos span {
+            position: relative;
+            display: block;
+            padding: .4em .4em .4em .8em;
+            *padding: .4em;
+            margin: .5em 0 .5em 2.5em;
+            background: #ddd;
+            color: #444;
+            text-decoration: none;
+            transition: all .3s ease-out;
+            cursor: pointer;
+        }
+
+        #div_activos span:hover {
+            background: #eee;
+        }
+
+        #div_activos span:before {
+            content:"";
+            position: absolute;
+            left: -2.5em;
+            top: 50%;
+            margin-top: -1em;
+            background: #fa8072;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+        }
+
+        #div_activos span:after {
+            position: absolute;
+            content: '';
+            border: .5em solid transparent;
+            left: -1em;
+            top: 50%;
+            margin-top: -.5em;
+            transition: all .3s ease-out;
+        }
+
+        #div_activos span:hover:after {
+            left: -.5em;
+            border-left-color: #fa8072;
+        }
     </style>
 </head>
 
