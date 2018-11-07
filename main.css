@@ -33,3 +33,14 @@ body {
     background-color: #222233;
     color: #AACCFF;
 }
+
+header a{
+            text-decoration: none;
+            color: #AACCFF;
+            background-image: url(./assets/supervisor_icon.png);
+            background-position: right;
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding-right: 1.7em;
+            height: 1.2em;
+        }
