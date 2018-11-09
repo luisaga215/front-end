@@ -84,6 +84,33 @@
             border-left-color: #fa8072;
         }
 
+        #div_activos .active:before {
+            content: "";
+            position: absolute;
+            left: -2.5em;
+            top: 50%;
+            margin-top: -1em;
+            background: #01FF70;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+        }
+
+        #div_activos .active:after {
+            position: absolute;
+            content: '';
+            border: .5em solid transparent;
+            left: -1em;
+            top: 50%;
+            margin-top: -.5em;
+            transition: all .3s ease-out;
+        }
+
+        #div_activos .active:hover:after {
+            left: -.5em;
+            border-left-color: #01FF70;
+        }
+
     </style>
 </head>
 
@@ -94,7 +121,7 @@
                 <li class="img_l logo"><img src="./assets/Ternium_logo.png" alt="Logo ternium" height="110px" width="260px">
                 </li>
                 <li class="modo"><a href="supervisor.html">
-                    Supervisor</a>
+                        Supervisor</a>
                 </li>
             </ul>
         </header>
@@ -130,6 +157,7 @@
                 }
             }
         }
+
     </script>
 
 </body>

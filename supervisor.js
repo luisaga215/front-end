@@ -17,9 +17,11 @@ $(document).ready(function () {
         'Christofer'
     ];
 
+    //Generar lista
     var ul = document.createElement('ul');
     ul.setAttribute('id', "myUL");
     document.getElementById("div_activos").appendChild(ul);
+
     //Funcion para agregar empleados activos a la lista
     employees.forEach(function (employees) {
         var a = document.createElement('a');
@@ -29,6 +31,12 @@ $(document).ready(function () {
         ul.appendChild(li);
         li.appendChild(a);
         a.innerHTML += employees;
+    });
+
+    //Funcion para cambiar el color del content en la lista al hacer click
+    $("ul a").click(function(){
+        $("ul a").removeClass('active');
+        $(this).addClass('active');
     });
 
 });
