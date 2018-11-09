@@ -1,19 +1,19 @@
 //Variable lista de empleados activos
 var employees = [
-        'Luis Glz',
-        'Ruben',
-        'Denisse',
-        'Rodrigo',
-        'Alex',
-        'Nestor',
-        'Missael',
-        'Fernanda',
-        'Luis C.',
-        'Luis Hdz',
-        'Vania',
-        'JuanPi',
-        'Diego',
-        'Christofer'
+        ['Luis Glz',100,150],
+        ['Ruben',100,150],
+        ['Denisse',100,150],
+        ['Rodrigo',100,150],
+        ['Alex',100,150],
+        ['Nestor',100,150],
+        ['Missael',100,150],
+        ['Fernanda',100,150],
+        ['Luis C.',100,150],
+        ['Luis Hdz',100,150],
+        ['Vania',100,150],
+        ['JuanPi',100,150],
+        ['Diego',100,150],
+        ['Christofer',100,150]
     ];
 
 //Generar lista de empleados activos
@@ -52,7 +52,9 @@ var Marker = function () {
 }
 var Markers = new Array();
 //Generar puntos en el mapa
-function generatePoints() {}
+function generatePoints() {
+
+}
 
 //Barra de busqueda
 function filterList() {
