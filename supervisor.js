@@ -1,6 +1,5 @@
-function generateList(){
-    //Variable lista de empleados activos
-    var employees = [
+//Variable lista de empleados activos
+var employees = [
         'Luis Glz',
         'Ruben',
         'Denisse',
@@ -17,6 +16,8 @@ function generateList(){
         'Christofer'
     ];
 
+//Generar lista de empleados activos
+function generateList() {
     //Generar lista
     var ul = document.createElement('ul');
     ul.setAttribute('id', "myUL");
@@ -38,8 +39,20 @@ function generateList(){
         $("ul a").removeClass('active');
         $(this).addClass('active');
     });
-
 };
+
+//Puntos en el mapa
+var Marker = function () {
+    this.Sprite = new Image();
+    this.Sprite.src = "./assets/marker_green.png";
+    this.Width = 12;
+    this.Height = 20;
+    this.XPos = 0;
+    this.YPos = 0;
+}
+var Markers = new Array();
+//Generar puntos en el mapa
+function generatePoints() {}
 
 //Barra de busqueda
 function filterList() {
@@ -74,5 +87,5 @@ function resizeCanvas() {
     ctx.fillStyle = "#000";
     ctx.fillRect(0, 0, cWidth, cHeight);
 
-    ctx.drawImage(mapImg, 0, 0, cWidth,cHeight);
+    ctx.drawImage(mapImg, 0, 0, cWidth, cHeight);
 }
