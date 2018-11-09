@@ -110,11 +110,10 @@
             left: -.5em;
             border-left-color: #01FF70;
         }
-
     </style>
 </head>
 
-<body>
+<body onload="resizeCanvas();">
     <div class="container-fluid">
         <header>
             <ul>
@@ -129,7 +128,7 @@
 
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 div_mapas">
-
+                <canvas id="supCanva"></canvas>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="searchBar">
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Busqueda por nombre..." title="Type in a name">
@@ -141,7 +140,7 @@
     </div>
 
     <script>
-        //Search bar
+        //Barra de busqueda
         function myFunction() {
             var input, filter, ul2, li2, i2, a2;
             input = document.getElementById("myInput");
@@ -157,7 +156,12 @@
                 }
             }
         }
-
+        //Canvas tamaño div responsivo
+        function resizeCanvas() {
+            var canvs = document.getElementById("supCanva");
+            canvs.width = $(".div_mapas").width();
+            canvs.height = $(".div_mapas").height();
+        }
     </script>
 
 </body>
