@@ -14,7 +14,6 @@
 
     <style type="text/css">
         .div_mapas {
-            background-color: #787878;
             height: 400px;
         }
 
@@ -113,7 +112,7 @@
     </style>
 </head>
 
-<body onload="resizeCanvas();" onresize="resizeCanvas();">
+<body onload="resizeCanvas(); generateList();" onresize="resizeCanvas(); generateList();">
     <div class="container-fluid">
         <header>
             <ul>
@@ -128,10 +127,10 @@
 
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 div_mapas">
-                <canvas id="supCanva"></canvas>
+                <canvas id="supCanva" style="border:1px solid #c3c3c3;"></canvas>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="searchBar">
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Busqueda por nombre..." title="Type in a name">
+                <input type="text" id="myInput" onkeyup="filterList();" placeholder="Busqueda por nombre..." title="Type in a name">
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="div_activos">
 
@@ -139,30 +138,6 @@
         </div>
     </div>
 
-    <script>
-        //Barra de busqueda
-        function myFunction() {
-            var input, filter, ul2, li2, i2, a2;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            ul2 = document.getElementById("myUL");
-            li2 = ul2.getElementsByClassName("the_li");
-            for (i = 0; i < li2.length; i++) {
-                a2 = li2[i].getElementsByTagName("a")[0];
-                if (a2.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    li2[i].style.display = "";
-                } else {
-                    li2[i].style.display = "none";
-                }
-            }
-        }
-        //Canvas tamaño div responsivo
-        function resizeCanvas() {
-            var canvs = document.getElementById("supCanva");
-            canvs.width = $(".div_mapas").width();
-            canvs.height = $(".div_mapas").height();
-        }
-    </script>
 
 </body>
 
