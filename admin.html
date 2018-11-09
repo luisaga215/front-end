@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="media.css">
+    <link rel="icon" href="./assets/tabicon.ico">
+    <script type="text/javascript" src="Admin.js"></script>
+
+    <style type="text/css">
+        #login_form {
+            color: white;
+            display: block;
+            padding: 2%;
+            display: block;
+            border: 1px solid #696969;
+            border-left: 6px solid #c8523b;
+            border-radius: 5px;
+            background-color: #787878;
+        }
+
+
+        ::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white;
+            opacity: 1;
+            /* Firefox */
+        }
+
+        :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: white;
+        }
+
+        ::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: white;
+        }
+
+        input[type=button] {
+            text-decoration: none;
+            display: inline-block;
+            background-color: #c8523b;
+            color: white;
+            -webkit-transition-duration: 0.8s;
+            /* Safari */
+            transition-duration: .8s;
+            border: 1px solid #c8523b;
+            border-radius: 5px;
+            width: 70%;
+            padding: 1.5%;
+            margin-left: 15%;
+            margin-bottom: 3%;
+            opacity: .7;
+            font-size: 1.3em;
+        }
+
+        input[type=button]:hover {
+            border: 1px solid #c8523b;
+            cursor: pointer;
+            opacity: 1;
+
+        }
+
+        b {
+            font-size: 1.6em;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #tabla {
+            background-color:#787878;
+            margin-left: 5%;
+            margin-right: 5%;
+            color: white
+        }
+
+        #Agregar {
+            background-color: #787878;
+            margin-left: 5%;
+            margin-right: 5%;
+            padding-top: 0.5%;
+            padding-bottom: 1%;
+            display: none;
+            padding-left:1%;
+            padding-right: 1%;
+            border-radius:8px;
+            color:white;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <ul>
+                <li class="img_l logo"><img src="./assets/Ternium_logo.png" alt="Logo ternium" height="110px" width="260px">
+                </li>
+                <li class="modo"><a href="admin.html">
+                        Listado de Perfiles.</a>
+                </li>
+            </ul>
+        </header>
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6">
+                    <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+            </div>
+            <div class="col-sm-4">
+                    <button type="button" style="float:right" class="button btn-success" onclick='ToggleDiv()'>Agregar</button>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+
+        <br>
+
+        <div id="Agregar">
+            <div class="rounded">
+                <form>
+                    <h3>Agregar Usuario</h3>
+
+                    <h5>Nombre Completo:</h5>
+                    <input type="text" name="Nombre" placeholder="Nombre">
+                    <h5>MAC Address del Dispositivo:</h5>
+                    <input type="text" name="Nombre" placeholder="MAC Address">
+                </form>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div id="tabla">
+                <table class="table">
+                    <thead style="background-color: #323232">
+                        <tr>
+                            <th>Dispositivo</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3D:2A:8F:00:4D</td>
+                            <td>Denisse Damían</td>
+                            <td>Denisse@example.com</td>
+                            <td>
+                                <button type="button" class="button btn-warning" onclick="alert('Usuario Eliminado')">Modificar</button>
+                                <button type="button" class="button btn-danger" onclick="alert('Usuario Eliminado')">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3A:3E:54:C4:8B</td>
+                            <td>Luis Gonzalez</td>
+                            <td>Luis@example.com</td>
+                            <td>
+                                <button type="button" class="button btn-warning" onclick="alert('Usuario Eliminado')">Modificar</button>
+                                <button type="button" class="button btn-danger" onclick="alert('Usuario Eliminado')">Eliminar</button>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7C:29:1A:CC:2E</td>
+                            <td>Rubén Charles</td>
+                            <td>Ruben@example.com</td>
+                            <td>
+                                <button type="button" class="button btn-warning" onclick="alert('Usuario Eliminado')">Modificar</button>
+                                <button type="button" class="button btn-danger" onclick="alert('Usuario Eliminado')">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5C:29:1E:6C:2F</td>
+                            <td>July Dooley</td>
+                            <td>July@example.com</td>
+                            <td>
+                                <button type="button" class="button btn-warning" onclick="alert('Usuario Eliminado')">Modificar</button>
+                                <button type="button" class="button btn-danger" onclick="alert('Usuario Eliminado')">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<footer>
+    <br>
+    <p style="text-align:center">Ternium 2018</p>
+</footer>
+
+</html>
