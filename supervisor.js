@@ -132,6 +132,7 @@ function filterList() {
     }
 }
 
+//Generar imagen background y canva del mismo tamaño
 function resizeCanvas() {
     var canvs = document.getElementById("supCanva");
     var cWidth = $(".div_mapas").width();
