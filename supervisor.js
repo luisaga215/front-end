@@ -135,8 +135,7 @@ function generatePoints() {
     for (i = 1; i <= employees.length; i++) {
         if (i == activePoint) {
             ctx.drawImage(markImg2, pointsX[i-1], pointsY[i-1], 20, 20);
-        }
-        if (i != activePoint) {
+        }else{
             ctx.drawImage(markImg, pointsX[i-1], pointsY[i-1], 20, 20);
         }
     }
