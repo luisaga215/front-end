@@ -111,8 +111,8 @@ function generatePoints() {
     }
 
 }
+setInterval(generatePoints, 500);
 
-setInterval(generatePoints, 1000);
 
 //Barra de busqueda
 function filterList() {
@@ -149,3 +149,4 @@ function resizeCanvas() {
 
     ctx.drawImage(mapImg, 0, 0, cWidth, cHeight);
 }
+setTimeout(resizeCanvas, 1000);
