@@ -16,31 +16,31 @@ var employees = [
         'Christofer'
     ];
 var pointsX = [
-        1,
+        20,
         120,
         110,
         105,
-        80,
+        165,
         75,
         120,
         40,
         30,
         250,
-        500,
+        130,
         360,
-        420,
-        480
+        300,
+        200
     ];
 
 var pointsY = [
-        1,
+        125,
         120,
         110,
         105,
-        80,
-        250,
-        330,
-        360,
+        300,
+        190,
+        300,
+        240,
         210,
         270,
         200,
@@ -48,17 +48,6 @@ var pointsY = [
         150,
         168
     ];
-//Puntos en el mapa
-/*var Marker = function () {
-    this.Sprite = new Image();
-    this.Sprite.src = "./assets/marker_green.png";
-    this.Width = 12;
-    this.Height = 20;
-    this.XPos = 0;
-    this.YPos = 0;
-}
-
-var Markers = new Array();*/
 
 var counterA = 1;
 var activePoint;
@@ -160,10 +149,10 @@ function resizeCanvas() {
     $(".mapa_supervisor").attr('width', cWidth);
     $(".mapa_supervisor").attr('height', cHeight);
     var i;
-//Modificar arreglo de puntos segun el tamaño de la imagen
+    //Modificar arreglo de puntos segun el tamaño de la imagen
     if(origWidth != null){
         console.log(cWidth, origWidth);
-    for (i = 0; i <= employees.length; i++) {
+    for (i = 0; i < employees.length; i++) {
         newPointsX[i] = (cWidth * pointsX[i]) / origWidth;
         newPointsY[i] = (cHeight * pointsY[i]) /origHeight;
     }
