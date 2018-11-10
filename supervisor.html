@@ -112,12 +112,12 @@
         }
 
 
-        .mapa_supervisor{
+        .mapa_supervisor {
             position: absolute;
             z-index: -1;
         }
 
-        #supCanva{
+        #supCanva {
             z-index: 20;
         }
 
@@ -127,6 +127,7 @@
             height: auto;
             margin-top: .8em;
         }
+
 
     </style>
 </head>
@@ -144,7 +145,7 @@
         </header>
         <hr>
 
-        <div class="row">
+        <div class="row updown">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 div_mapas">
                 <img alt="mapaSup" src="./assets/mapa_interior.jpg" class="mapa_supervisor">
 
@@ -160,8 +161,19 @@
             </div>
         </div>
     </div>
+    <script>
+        $( document ).ready(function() {
 
+            var newImg = new Image();
+
+            newImg.onload = function() {
+                var height = newImg.height;
+                var width = newImg.width;
+                alert('The image size is ' + width + '*' + height);
+            }
+        })
+        newImg.src = "./assets/inside_map.jpg";
+    </script>
 </body>
 
 </html>
-
