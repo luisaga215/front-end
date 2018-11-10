@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Supervisor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="supervisor.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="media.css">
+
+    <style type="text/css">
+        .div_mapas {
+
+            position: relative;
+        }
+
+        #myInput {
+            background-image: url('./assets/searchicon.png');
+            background-position: left;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100%;
+            border: 1px solid #ddd;
+            margin-bottom: .3em;
+            padding-left: 2.1em;
+        }
+
+        #div_activos {
+
+            overflow: auto;
+        }
+
+        #div_activos ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #div_activos a {
+            position: relative;
+            display: block;
+            padding: .4em .4em .4em .8em;
+            *padding: .4em;
+            margin: .5em 0 .5em 2.5em;
+            background: #ddd;
+            color: #444;
+            text-decoration: none;
+            transition: all .3s ease-out;
+            cursor: pointer;
+        }
+
+        #div_activos a:hover {
+            background: #eee;
+        }
+
+        #div_activos a:before {
+            content: "";
+            position: absolute;
+            left: -2.5em;
+            top: 50%;
+            margin-top: -1em;
+            background: #fa8072;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+        }
+
+        #div_activos a:after {
+            position: absolute;
+            content: '';
+            border: .5em solid transparent;
+            left: -1em;
+            top: 50%;
+            margin-top: -.5em;
+            transition: all .3s ease-out;
+        }
+
+        #div_activos a:hover:after {
+            left: -.5em;
+            border-left-color: #fa8072;
+        }
+
+        #div_activos .active:before {
+            content: "";
+            position: absolute;
+            left: -2.5em;
+            top: 50%;
+            margin-top: -1em;
+            background: #01FF70;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+        }
+
+        #div_activos .active:after {
+            position: absolute;
+            content: '';
+            border: .5em solid transparent;
+            left: -1em;
+            top: 50%;
+            margin-top: -.5em;
+            transition: all .3s ease-out;
+        }
+
+        #div_activos .active:hover:after {
+            left: -.5em;
+            border-left-color: #01FF70;
+        }
+
+
+        .mapa_supervisor{
+            position: absolute;
+            z-index: -1;
+        }
+
+        #supCanva{
+            z-index: 20;
+        }
+
+        #historial_button {
+
+            width: 100%;
+            height: auto;
+            margin-top: .8em;
+        }
+
+    </style>
+</head>
+
+<body onload="generateList(); generatePoints(); resizeCanvas();" onresize="resizeCanvas(); generatePoints();">
+    <div class="container-fluid">
+        <header>
+            <ul>
+                <li class="img_l logo"><img src="./assets/Ternium_logo.png" alt="Logo ternium" height="110px" width="260px">
+                </li>
+                <li class="modo"><a href="supervisor.html">
+                        Supervisor</a>
+                </li>
+            </ul>
+        </header>
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 div_mapas">
+                <img alt="mapaSup" src="./assets/mapa_interior.jpg" class="mapa_supervisor">
+
+                <canvas id="supCanva" style="border:1px solid #c3c3c3;"></canvas>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="searchBar">
+                <input type="text" id="myInput" onkeyup="filterList();" placeholder="Busqueda por nombre..." title="Type in a name">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="div_activos">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <button id="historial_button" type="button" onclick="window.location.href='historial.html'" class="btn-warning">Ver historial</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
