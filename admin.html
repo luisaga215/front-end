@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="icon" href="./assets/tabicon.ico">
+    <script type="text/javascript" src="admin.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="media.css">
-    <link rel="icon" href="./assets/tabicon.ico">
-    <script type="text/javascript" src="Admin.js"></script>
 
     <style type="text/css">
         #login_form {
@@ -69,6 +69,10 @@
 
         }
 
+        input[type=text]{
+            color:black;
+        }
+
         b {
             font-size: 1.6em;
         }
@@ -79,15 +83,13 @@
 
         #tabla {
             background-color:#787878;
-            margin-left: 5%;
-            margin-right: 5%;
-            color: white
+            color: white;
         }
 
         #Agregar {
             background-color: #787878;
-            margin-left: 5%;
-            margin-right: 5%;
+            margin-left: 10%;
+            margin-right: 10%;
             padding-top: 0.5%;
             padding-bottom: 1%;
             display: none;
@@ -97,18 +99,29 @@
             color:white;
         }
 
+        .dropdown-puesto {
+            color:black;
+        }
 
+        thead {
+            background-color:#323232
+        }
+
+        #contenedor {
+            overflow:auto;
+            text-align:right;
+        }
     </style>
 </head>
 
-<body>
+<body onload="llenarTabla();">
     <div class="container-fluid">
         <header>
             <ul>
                 <li class="img_l logo"><img src="./assets/Ternium_logo.png" alt="Logo ternium" height="110px" width="260px">
                 </li>
-                <li class="modo"><a href="admin.html">
-                        Listado de Perfiles.</a>
+                <li class="modo">
+                    <p>Listado de Perfiles.</p>
                 </li>
             </ul>
         </header>
@@ -117,10 +130,10 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-6">
-                    <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                    <input class="form-control" type="text" placeholder="Buscar por nombre" aria-label="Search">
             </div>
             <div class="col-sm-4">
-                    <button type="button" style="float:right" class="button btn-success" onclick='ToggleDiv()'>Agregar</button>
+                    <button type="button" style="float:right" class="btn btn-success" onclick='ToggleDiv()'>Agregar</button>
             </div>
             <div class="col-sm-1"></div>
         </div>
@@ -133,19 +146,40 @@
                     <h3>Agregar Usuario</h3>
 
                     <h5>Nombre Completo:</h5>
-                    <input type="text" name="Nombre" placeholder="Nombre">
+                    <input type="text" name="Nombre" id="nombre" placeholder="Nombre" size="40">
+
+                    <select class="dropdown-puesto" class="custom-select" id="inputGroupSelect01">
+                            <option selected>Selecciona el puesto</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Supervisor</option>
+                            <option value="3">Seguridad</option>
+                    </select>
+
+                    <h5>Nómina:</h5>
+                    <input type="text" name="Nomina" id="Nomina" placeholder="Nomina" size="40">
+
                     <h5>MAC Address del Dispositivo:</h5>
-                    <input type="text" name="Nombre" placeholder="MAC Address">
+                    <input type="text" name="MAC" id="mac" placeholder="MAC Address" size="40">
+
+                    <h5>Subir foto:</h5>
+                    <input type="file" name="Foto">
+
+                    <br><br>
+
+                    <button class="btn btn-success" type="submit" onclick="alta()">Dar de Alta</button>
+
+
                 </form>
             </div>
         </div>
 
         <br>
 
-        <div class="row">
-            <div id="tabla">
-                <table class="table">
-                    <thead style="background-color: #323232">
+        <div class="row" id="contenedor">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <table class="table" id="tabla">
+                    <thead>
                         <tr>
                             <th>Dispositivo</th>
                             <th>Nombre</th>
@@ -153,47 +187,10 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>3D:2A:8F:00:4D</td>
-                            <td>Denisse Damían</td>
-                            <td>Denisse@example.com</td>
-                            <td>
-                                <button type="button" class="button btn-warning" onclick="alert('Usuario Eliminado')">Modificar</button>
-                                <button type="button" class="button btn-danger" onclick="alert('Usuario Eliminado')">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3A:3E:54:C4:8B</td>
-                            <td>Luis Gonzalez</td>
-                            <td>Luis@example.com</td>
-                            <td>
-                                <button type="button" class="button btn-warning" onclick="alert('Usuario Eliminado')">Modificar</button>
-                                <button type="button" class="button btn-danger" onclick="alert('Usuario Eliminado')">Eliminar</button>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>7C:29:1A:CC:2E</td>
-                            <td>Rubén Charles</td>
-                            <td>Ruben@example.com</td>
-                            <td>
-                                <button type="button" class="button btn-warning" onclick="alert('Usuario Eliminado')">Modificar</button>
-                                <button type="button" class="button btn-danger" onclick="alert('Usuario Eliminado')">Eliminar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5C:29:1E:6C:2F</td>
-                            <td>July Dooley</td>
-                            <td>July@example.com</td>
-                            <td>
-                                <button type="button" class="button btn-warning" onclick="alert('Usuario Eliminado')">Modificar</button>
-                                <button type="button" class="button btn-danger" onclick="alert('Usuario Eliminado')">Eliminar</button>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody></tbody>
                 </table>
             </div>
+            <div class="col-sm-1"></div>
         </div>
 
     </div>
@@ -201,7 +198,7 @@
 
 <footer>
     <br>
-    <p style="text-align:center">Ternium 2018</p>
+    <p style="text-align:center">Ternium © 2018</p>
 </footer>
 
 </html>
