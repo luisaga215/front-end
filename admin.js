@@ -60,8 +60,9 @@ function llenarTabla() {
 
 }
 
-function alta(){
-    var nomina_trabajador = $('nomina').val();
-    console.log(nomina_trabajador);
+var nomina_trabajador;
 
+function alta(){
+    nomina_trabajador = document.getElementById('Nomina').value;
+    console.log(nomina_trabajador);
 }
