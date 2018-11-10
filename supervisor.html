@@ -14,7 +14,7 @@
 
     <style type="text/css">
         .div_mapas {
-            height: 480px;
+
             position: relative;
         }
 
@@ -26,11 +26,11 @@
             width: 100%;
             border: 1px solid #ddd;
             margin-bottom: .3em;
-            padding-left: 2em;
+            padding-left: 2.1em;
         }
 
         #div_activos {
-            height: 410px;
+
             overflow: auto;
         }
 
@@ -111,19 +111,21 @@
             border-left-color: #01FF70;
         }
 
+
+        .mapa_supervisor{
+            position: absolute;
+            z-index: -1;
+        }
+
+        #supCanva{
+            z-index: 20;
+        }
+      
         #historial_button {
+
             width: 100%;
             height: auto;
-            margin-top: 1em;
-        }
-
-        .the_map {
-            z-index: -1;
-            position: absolute;
-        }
-
-        #supCanva {
-            z-index: 10;
+            margin-top: .8em;
         }
 
     </style>
@@ -144,7 +146,8 @@
 
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 div_mapas">
-                <img alt=mapaActual src="./assets/inside_map.jpg" class="the_map">
+                <img alt="mapaSup" src="./assets/mapa_interior.jpg" class="mapa_supervisor">
+
                 <canvas id="supCanva" style="border:1px solid #c3c3c3;"></canvas>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="searchBar">
@@ -153,7 +156,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="div_activos">
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <button id="historial_button" type="button" onclick="window.location.href='historial.html'">Ver historial</button>
+                <button id="historial_button" type="button" onclick="window.location.href='historial.html'" class="btn-warning">Ver historial</button>
             </div>
         </div>
     </div>

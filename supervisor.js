@@ -31,6 +31,7 @@ var pointsX = [
         420,
         480
     ];
+
 var pointsY = [
         1,
         120,
@@ -57,10 +58,12 @@ var pointsY = [
     this.XPos = 0;
     this.YPos = 0;
 }
+
 var Markers = new Array();*/
 
 var counterA = 1;
 var activePoint;
+
 //Generar lista de empleados activos
 function generateList() {
     //Generar lista
@@ -91,6 +94,30 @@ function generateList() {
 };
 
 
+//Generar puntos en el mapa
+function generatePoints() {
+
+    var i;
+    var canvs = document.getElementById("supCanva");
+    var ctx = canvs.getContext("2d");
+    var markImg = new Image();
+    var markImg2 = new Image();
+    markImg.src = "./assets/marker_red.png";
+    markImg2.src = "./assets/marker_green.png";
+
+    for (i = 1; i <= employees.length; i++) {
+        if (i == activePoint) {
+            ctx.drawImage(markImg2, pointsX[i - 1], pointsY[i - 1], 20, 20);
+        }
+        if (i != activePoint) {
+            ctx.drawImage(markImg, pointsX[i - 1], pointsY[i - 1], 20, 20);
+        }
+    }
+
+}
+setInterval(generatePoints, 500);
+
+
 //Barra de busqueda
 function filterList() {
     var input, filter, ul2, li2, i2, a2;
@@ -108,17 +135,19 @@ function filterList() {
     }
 }
 
+//Generar imagen background y canva del mismo tamaño
 function resizeCanvas() {
     var canvs = document.getElementById("supCanva");
-    canvs.width = $(".div_mapas").width();
-    canvs.height = $(".div_mapas").height();
+    var cWidth = $(".div_mapas").width();
+    var cHeight = $(".div_mapas").height();
 
-    var cWidth = canvs.width;
-    var cHeight = canvs.height;
+    canvs.width = cWidth;
+    canvs.height = cHeight;
 
-    //Get image and apply same values
-    $('.the_map').attr("width",cWidth);
-    $('.the_map').attr("height", cHeight);
+
+    //Get image
+    $(".mapa_supervisor").attr('width', cWidth);
+    $(".mapa_supervisor").attr('height', cHeight);
 }
 
 //Generar puntos en el mapa
@@ -139,7 +168,6 @@ function generatePoints() {
             ctx.drawImage(markImg, pointsX[i-1], pointsY[i-1], 20, 20);
         }
     }
-
 }
 setInterval(generatePoints, 500);
 
