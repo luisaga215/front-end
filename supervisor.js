@@ -50,7 +50,7 @@ var pointsY = [
     ];
 
 //Puntos en el mapa
-var Marker = function () {
+/*var Marker = function () {
     this.Sprite = new Image();
     this.Sprite.src = "./assets/marker_green.png";
     this.Width = 12;
@@ -59,7 +59,8 @@ var Marker = function () {
     this.YPos = 0;
 }
 
-var Markers = new Array();
+var Markers = new Array();*/
+
 var counterA = 1;
 var activePoint;
 
@@ -92,6 +93,7 @@ function generateList() {
 
 };
 
+
 //Generar puntos en el mapa
 function generatePoints() {
 
@@ -114,6 +116,7 @@ function generatePoints() {
 
 }
 setInterval(generatePoints, 500);
+
 
 //Barra de busqueda
 function filterList() {
@@ -141,8 +144,30 @@ function resizeCanvas() {
     canvs.width = cWidth;
     canvs.height = cHeight;
 
+
     //Get image
     $(".mapa_supervisor").attr('width', cWidth);
     $(".mapa_supervisor").attr('height', cHeight);
 }
-setTimeout(resizeCanvas, 1000);
+
+//Generar puntos en el mapa
+function generatePoints() {
+
+    var i;
+    var canvs = document.getElementById("supCanva");
+    var ctx = canvs.getContext("2d");
+    var markImg = new Image();
+    var markImg2 = new Image();
+    markImg.src = "./assets/marker_red.png";
+    markImg2.src = "./assets/marker_green.png";
+
+    for (i = 1; i <= employees.length; i++) {
+        if (i == activePoint) {
+            ctx.drawImage(markImg2, pointsX[i-1], pointsY[i-1], 20, 20);
+        }else{
+            ctx.drawImage(markImg, pointsX[i-1], pointsY[i-1], 20, 20);
+        }
+    }
+}
+setInterval(generatePoints, 500);
+

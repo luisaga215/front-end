@@ -14,6 +14,7 @@
 
     <style type="text/css">
         .div_mapas {
+
             position: relative;
         }
 
@@ -29,6 +30,7 @@
         }
 
         #div_activos {
+
             overflow: auto;
         }
 
@@ -109,6 +111,7 @@
             border-left-color: #01FF70;
         }
 
+
         .mapa_supervisor{
             position: absolute;
             z-index: -1;
@@ -117,8 +120,9 @@
         #supCanva{
             z-index: 20;
         }
+      
+        #historial_button {
 
-        #historial_button{
             width: 100%;
             height: auto;
             margin-top: .8em;
@@ -127,7 +131,7 @@
     </style>
 </head>
 
-<body onload="resizeCanvas(); generateList(); generatePoints();" onresize="resizeCanvas(); generatePoints();">
+<body onload="generateList(); generatePoints(); resizeCanvas();" onresize="resizeCanvas(); generatePoints();">
     <div class="container-fluid">
         <header>
             <ul>
@@ -143,6 +147,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 div_mapas">
                 <img alt="mapaSup" src="./assets/mapa_interior.jpg" class="mapa_supervisor">
+
                 <canvas id="supCanva" style="border:1px solid #c3c3c3;"></canvas>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="searchBar">
@@ -155,7 +160,6 @@
             </div>
         </div>
     </div>
-
 
 </body>
 
