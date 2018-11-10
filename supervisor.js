@@ -49,7 +49,7 @@ var pointsY = [
     ];
 
 //Puntos en el mapa
-var Marker = function () {
+/*var Marker = function () {
     this.Sprite = new Image();
     this.Sprite.src = "./assets/marker_green.png";
     this.Width = 12;
@@ -57,7 +57,8 @@ var Marker = function () {
     this.XPos = 0;
     this.YPos = 0;
 }
-var Markers = new Array();
+var Markers = new Array();*/
+
 var counterA = 1;
 var activePoint;
 //Generar lista de empleados activos
@@ -90,30 +91,6 @@ function generateList() {
 };
 
 
-//Generar puntos en el mapa
-function generatePoints() {
-
-    var i;
-    var canvs = document.getElementById("supCanva");
-    var ctx = canvs.getContext("2d");
-    var markImg = new Image();
-    var markImg2 = new Image();
-    markImg.src = "./assets/marker_red.png";
-    markImg2.src = "./assets/marker_green.png";
-
-    for (i = 1; i <= employees.length; i++) {
-        if (i == activePoint) {
-            ctx.drawImage(markImg2, pointsX[i-1], pointsY[i-1], 20, 20);
-        }
-        if (i != activePoint) {
-            ctx.drawImage(markImg, pointsX[i-1], pointsY[i-1], 20, 20);
-        }
-    }
-
-}
-setInterval(generatePoints, 500);
-
-
 //Barra de busqueda
 function filterList() {
     var input, filter, ul2, li2, i2, a2;
@@ -139,14 +116,31 @@ function resizeCanvas() {
     var cWidth = canvs.width;
     var cHeight = canvs.height;
 
-    //Get image
-    var ctx = canvs.getContext("2d");
-    var mapImg = new Image();
-    mapImg.src = "./assets/inside_map.jpg";
-
-    ctx.fillStyle = "#000";
-    ctx.fillRect(0, 0, cWidth, cHeight);
-
-    ctx.drawImage(mapImg, 0, 0, cWidth, cHeight);
+    //Get image and apply same values
+    $('.the_map').attr("width",cWidth);
+    $('.the_map').attr("height", cHeight);
 }
-setTimeout(resizeCanvas, 1000);
+
+//Generar puntos en el mapa
+function generatePoints() {
+
+    var i;
+    var canvs = document.getElementById("supCanva");
+    var ctx = canvs.getContext("2d");
+    var markImg = new Image();
+    var markImg2 = new Image();
+    markImg.src = "./assets/marker_red.png";
+    markImg2.src = "./assets/marker_green.png";
+
+    for (i = 1; i <= employees.length; i++) {
+        if (i == activePoint) {
+            ctx.drawImage(markImg2, pointsX[i-1], pointsY[i-1], 20, 20);
+        }
+        if (i != activePoint) {
+            ctx.drawImage(markImg, pointsX[i-1], pointsY[i-1], 20, 20);
+        }
+    }
+
+}
+setInterval(generatePoints, 500);
+
