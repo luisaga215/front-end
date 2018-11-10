@@ -31,6 +31,7 @@ var pointsX = [
         420,
         480
     ];
+
 var pointsY = [
         1,
         120,
@@ -57,10 +58,16 @@ var pointsY = [
     this.XPos = 0;
     this.YPos = 0;
 }
+<<<<<<< HEAD
 var Markers = new Array();*/
 
+=======
+
+var Markers = new Array();
+>>>>>>> front-end-ternium/supervisor_edits
 var counterA = 1;
 var activePoint;
+
 //Generar lista de empleados activos
 function generateList() {
     //Generar lista
@@ -90,6 +97,31 @@ function generateList() {
 
 };
 
+<<<<<<< HEAD
+=======
+//Generar puntos en el mapa
+function generatePoints() {
+
+    var i;
+    var canvs = document.getElementById("supCanva");
+    var ctx = canvs.getContext("2d");
+    var markImg = new Image();
+    var markImg2 = new Image();
+    markImg.src = "./assets/marker_red.png";
+    markImg2.src = "./assets/marker_green.png";
+
+    for (i = 1; i <= employees.length; i++) {
+        if (i == activePoint) {
+            ctx.drawImage(markImg2, pointsX[i - 1], pointsY[i - 1], 20, 20);
+        }
+        if (i != activePoint) {
+            ctx.drawImage(markImg, pointsX[i - 1], pointsY[i - 1], 20, 20);
+        }
+    }
+
+}
+setInterval(generatePoints, 500);
+>>>>>>> front-end-ternium/supervisor_edits
 
 //Barra de busqueda
 function filterList() {
@@ -108,14 +140,16 @@ function filterList() {
     }
 }
 
+//Generar imagen background y canva del mismo tamaño
 function resizeCanvas() {
     var canvs = document.getElementById("supCanva");
-    canvs.width = $(".div_mapas").width();
-    canvs.height = $(".div_mapas").height();
+    var cWidth = $(".div_mapas").width();
+    var cHeight = $(".div_mapas").height();
 
-    var cWidth = canvs.width;
-    var cHeight = canvs.height;
+    canvs.width = cWidth;
+    canvs.height = cHeight;
 
+<<<<<<< HEAD
     //Get image and apply same values
     $('.the_map').attr("width",cWidth);
     $('.the_map').attr("height", cHeight);
@@ -140,6 +174,11 @@ function generatePoints() {
         }
     }
 
+=======
+    //Get image
+    $(".mapa_supervisor").attr('width', cWidth);
+    $(".mapa_supervisor").attr('height', cHeight);
+>>>>>>> front-end-ternium/supervisor_edits
 }
 setInterval(generatePoints, 500);
 
