@@ -48,7 +48,6 @@ var pointsY = [
         150,
         168
     ];
-
 //Puntos en el mapa
 /*var Marker = function () {
     this.Sprite = new Image();
@@ -93,10 +92,19 @@ function generateList() {
 
 };
 
+//Obtener valores originales de la imagen
+var image = new Image();
+var origWidth;
+var origHeight;
+    image.src = "./assets/mapa_interior.jpg";
+    image.onload = function () {
+        origWidth = image.naturalWidth;
+        origHeight = image.naturalHeight;
+    }
+
 
 //Generar puntos en el mapa
 function generatePoints() {
-
     var i;
     var canvs = document.getElementById("supCanva");
     var ctx = canvs.getContext("2d");
@@ -107,10 +115,10 @@ function generatePoints() {
 
     for (i = 1; i <= employees.length; i++) {
         if (i == activePoint) {
-            ctx.drawImage(markImg2, pointsX[i - 1], pointsY[i - 1], 20, 20);
+            ctx.drawImage(markImg2, newPointsX[i - 1], newPointsY[i - 1], 20, 20);
         }
         if (i != activePoint) {
-            ctx.drawImage(markImg, pointsX[i - 1], pointsY[i - 1], 20, 20);
+            ctx.drawImage(markImg, newPointsX[i - 1], newPointsY[i - 1], 20, 20);
         }
     }
 
@@ -136,23 +144,35 @@ function filterList() {
 }
 
 //Generar imagen background y canva del mismo tamaño
+var cWidth;
+var cHeight;
+var newPointsX = pointsX.slice();
+var newPointsY = pointsY.slice();
 function resizeCanvas() {
+
     var canvs = document.getElementById("supCanva");
-    var cWidth = $(".div_mapas").width();
-    var cHeight = $(".div_mapas").height();
+    cWidth = $(".div_mapas").width();
+    cHeight = $(".div_mapas").height();
 
     canvs.width = cWidth;
     canvs.height = cHeight;
-
-
     //Get image
     $(".mapa_supervisor").attr('width', cWidth);
     $(".mapa_supervisor").attr('height', cHeight);
+    var i;
+//Modificar arreglo de puntos segun el tamaño de la imagen
+    if(origWidth != null){
+        console.log(cWidth, origWidth);
+    for (i = 0; i <= employees.length; i++) {
+        newPointsX[i] = (cWidth * pointsX[i]) / origWidth;
+        newPointsY[i] = (cHeight * pointsY[i]) /origHeight;
+    }
+    }
+
 }
 
 //Generar puntos en el mapa
 function generatePoints() {
-
     var i;
     var canvs = document.getElementById("supCanva");
     var ctx = canvs.getContext("2d");
@@ -161,13 +181,14 @@ function generatePoints() {
     markImg.src = "./assets/marker_red.png";
     markImg2.src = "./assets/marker_green.png";
 
+    if(newPointsX != null || newPointsY != null){
     for (i = 1; i <= employees.length; i++) {
         if (i == activePoint) {
-            ctx.drawImage(markImg2, pointsX[i-1], pointsY[i-1], 20, 20);
-        }else{
-            ctx.drawImage(markImg, pointsX[i-1], pointsY[i-1], 20, 20);
+            ctx.drawImage(markImg2, newPointsX[i - 1], newPointsY[i - 1], 20, 20);
+        } else {
+            ctx.drawImage(markImg, newPointsX[i - 1], newPointsY[i - 1], 20, 20);
         }
+    }
     }
 }
 setInterval(generatePoints, 500);
-
