@@ -14,6 +14,7 @@
 
     <style type="text/css">
         .div_mapas {
+            position: relative;
             height: 500px;
         }
 
@@ -115,6 +116,16 @@
             height: auto;
             margin-top: 1em;
         }
+
+        .mapa_supervisor{
+            position: absolute;
+            z-index: -1;
+        }
+
+        #supCanva{
+            z-index: 20;
+        }
+
     </style>
 </head>
 
@@ -133,6 +144,7 @@
 
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 div_mapas">
+                <img alt="mapaSup" src="./assets/mapa_interior.jpg" class="mapa_supervisor">
                 <canvas id="supCanva" style="border:1px solid #c3c3c3;"></canvas>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="searchBar">

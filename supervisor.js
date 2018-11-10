@@ -31,6 +31,7 @@ var pointsX = [
         420,
         480
     ];
+
 var pointsY = [
         1,
         120,
@@ -103,10 +104,10 @@ function generatePoints() {
 
     for (i = 1; i <= employees.length; i++) {
         if (i == activePoint) {
-            ctx.drawImage(markImg2, pointsX[i-1], pointsY[i-1], 20, 20);
+            ctx.drawImage(markImg2, pointsX[i - 1], pointsY[i - 1], 20, 20);
         }
         if (i != activePoint) {
-            ctx.drawImage(markImg, pointsX[i-1], pointsY[i-1], 20, 20);
+            ctx.drawImage(markImg, pointsX[i - 1], pointsY[i - 1], 20, 20);
         }
     }
 
@@ -133,20 +134,14 @@ function filterList() {
 
 function resizeCanvas() {
     var canvs = document.getElementById("supCanva");
-    canvs.width = $(".div_mapas").width();
-    canvs.height = $(".div_mapas").height();
+    var cWidth = $(".div_mapas").width();
+    var cHeight = $(".div_mapas").height();
 
-    var cWidth = canvs.width;
-    var cHeight = canvs.height;
+    canvs.width = cWidth;
+    canvs.height = cHeight;
 
     //Get image
-    var ctx = canvs.getContext("2d");
-    var mapImg = new Image();
-    mapImg.src = "./assets/inside_map.jpg";
-
-    ctx.fillStyle = "#000";
-    ctx.fillRect(0, 0, cWidth, cHeight);
-
-    ctx.drawImage(mapImg, 0, 0, cWidth, cHeight);
+    $(".mapa_supervisor").attr('width', cWidth);
+    $(".mapa_supervisor").attr('height', cHeight);
 }
 setTimeout(resizeCanvas, 1000);
