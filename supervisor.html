@@ -15,7 +15,6 @@
     <style type="text/css">
         .div_mapas {
             position: relative;
-            height: 500px;
         }
 
         #myInput {
@@ -26,11 +25,10 @@
             width: 100%;
             border: 1px solid #ddd;
             margin-bottom: .3em;
-            padding-left: 2em;
+            padding-left: 2.1em;
         }
 
         #div_activos {
-            height: 430px;
             overflow: auto;
         }
 
@@ -111,12 +109,6 @@
             border-left-color: #01FF70;
         }
 
-        #historial_button{
-            width: 100%;
-            height: auto;
-            margin-top: 1em;
-        }
-
         .mapa_supervisor{
             position: absolute;
             z-index: -1;
@@ -124,6 +116,12 @@
 
         #supCanva{
             z-index: 20;
+        }
+
+        #historial_button{
+            width: 100%;
+            height: auto;
+            margin-top: .8em;
         }
 
     </style>
@@ -153,7 +151,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="div_activos">
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <button id="historial_button" type="button" onclick="window.location.href='historial.html'">Ver historial</button>
+                <button id="historial_button" type="button" onclick="window.location.href='historial.html'" class="btn-warning">Ver historial</button>
             </div>
         </div>
     </div>

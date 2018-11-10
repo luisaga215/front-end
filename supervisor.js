@@ -58,9 +58,11 @@ var Marker = function () {
     this.XPos = 0;
     this.YPos = 0;
 }
+
 var Markers = new Array();
 var counterA = 1;
 var activePoint;
+
 //Generar lista de empleados activos
 function generateList() {
     //Generar lista
@@ -90,7 +92,6 @@ function generateList() {
 
 };
 
-
 //Generar puntos en el mapa
 function generatePoints() {
 
@@ -113,7 +114,6 @@ function generatePoints() {
 
 }
 setInterval(generatePoints, 500);
-
 
 //Barra de busqueda
 function filterList() {
