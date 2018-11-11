@@ -88,15 +88,14 @@
 
         #Agregar {
             background-color: #787878;
-            margin-left: 10%;
-            margin-right: 10%;
+            margin-left: 30%;
+            margin-right: 30%;
             padding-top: 0.5%;
             padding-bottom: 1%;
             display: none;
             padding-left:1%;
             padding-right: 1%;
             border-radius:8px;
-            color:white;
         }
 
         .dropdown-puesto {
@@ -111,6 +110,16 @@
             overflow:auto;
             text-align:right;
         }
+
+        #AgregarSupervisor {
+            display:block;
+        }
+
+        #AgregarAdministrador, #AgregarSeguridad, #AgregarTrabajador {
+            display:none;
+        }
+
+
     </style>
 </head>
 
@@ -127,54 +136,135 @@
         </header>
         <hr>
 
+        <!--Barra de Busqueda y botón de agregar usuario-->
         <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                     <input class="form-control" type="text" placeholder="Buscar por nombre" aria-label="Search">
             </div>
-            <div class="col-sm-4">
-                    <button type="button" style="float:right" class="btn btn-success" onclick='ToggleDiv()'>Agregar</button>
+            <div class="col-sm-6">
+                    <button type="button" style="float:right" class="btn btn-success" onclick='ToggleDiv();'>Agregar Usuario</button>
             </div>
             <div class="col-sm-1"></div>
         </div>
 
         <br>
 
+        <!--División de los forms para dar de alta a un usuario-->
         <div id="Agregar">
             <div class="rounded">
-                <form>
-                    <h3>Agregar Usuario</h3>
 
-                    <h5>Nombre Completo:</h5>
-                    <input type="text" name="Nombre" id="nombre" placeholder="Nombre" size="40">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary" onclick='ToggleSup()'>Supervisor</button>
+                    <button type="button" class="btn btn-primary" onclick='ToggleAdmin()'>Administrador</button>
+                    <button type="button" class="btn btn-primary" onclick='ToggleSeg()'>Seguridad</button>
+                    <button type="button" class="btn btn-primary" onclick='ToggleTra()'>Trabajador</button>
+                </div>
 
-                    <select class="dropdown-puesto" class="custom-select" id="inputGroupSelect01">
-                            <option selected>Selecciona el puesto</option>
-                            <option value="1">Administrador</option>
-                            <option value="2">Supervisor</option>
-                            <option value="3">Seguridad</option>
-                    </select>
+                <div id="AgregarSupervisor" style="color:white">
+                    <form>
+                        <h3 style="text-align:center">Agregar Supervisor</h3>
 
-                    <h5>Nómina:</h5>
-                    <input type="text" name="Nomina" id="Nomina" placeholder="Nomina" size="40">
+                        <h5>Nómina:</h5>
+                        <input type="text" name="nominaSup" id="nominaSup" placeholder="nomina" size="40">
 
-                    <h5>MAC Address del Dispositivo:</h5>
-                    <input type="text" name="MAC" id="mac" placeholder="MAC Address" size="40">
+                        <h5>Nombre Completo:</h5>
+                        <input type="text" name="nombreSup" id="nombreSup" placeholder="nombre" size="40">
 
-                    <h5>Subir foto:</h5>
-                    <input type="file" name="Foto">
+                        <h5>Grupo a Cargo:</h5>
+                        <input type="text" name="grupoSup" id="grupoSup" placeholder="group" size="10">
 
-                    <br><br>
+                        <h5>Contraseña:</h5>
+                        <input type="password" name="passwordSup" id="passwordSup"  size="40">
 
-                    <button class="btn btn-success" type="button" onclick="alta()">Dar de Alta</button>
+                        <h5>MAC Address del Dispositivo:</h5>
+                        <input type="text" name="macSup" id="macSup" placeholder="MAC Address" size="40">
+
+                        <h5>Subir foto:</h5>
+                        <input type="file" name="Foto">
+
+                        <br><br>
+
+                        <button class="btn btn-success" type="button" onclick="alta()">Dar de Alta</button>
+                    </form>
+                </div>
+
+                <div id="AgregarSeguridad" style="color:white">
+                    <form>
+                        <h3 style="text-align:center">Agregar Seguridad</h3>
+
+                        <h5>Nómina:</h5>
+                        <input type="text" name="nominaSeg" id="nominaSeg" placeholder="nomina" size="40">
+
+                        <h5>Nombre Completo:</h5>
+                        <input type="text" name="nombreSeg" id="nombreSeg" placeholder="nombre" size="40">
+
+                        <h5>Contraseña:</h5>
+                        <input type="password" name="nombreSeg" id="passwordSeg"  size="40">
+
+                        <h5>Subir foto:</h5>
+                        <input type="file" name="Foto">
+
+                        <br><br>
+
+                        <button class="btn btn-success" type="button" onclick="alta()">Dar de Alta</button>
+                    </form>
+                </div>
+
+                <div id="AgregarAdministrador" style="color:white">
+                    <form>
+                        <h3 style="text-align:center">Agregar Administrador</h3>
+
+                        <h5>Nómina:</h5>
+                        <input type="text" name="nominaAdmin" id="nominaAdmin" placeholder="nomina" size="40">
+
+                        <h5>Nombre Completo:</h5>
+                        <input type="text" name="nombreAdmin" id="nombreAdmin" placeholder="nombre" size="40">
+
+                        <h5>Contraseña:</h5>
+                        <input type="password" name="nombreAdmin" id="passwordAdmin"  size="40" style="color:black">
+
+                        <h5>Subir foto:</h5>
+                        <input type="file" name="Foto">
+
+                        <br><br>
+
+                        <button class="btn btn-success" type="button" onclick="alta()">Dar de Alta</button>
+                    </form>
+                </div>
+
+                <div id="AgregarTrabajador" style="color:white">
+                        <form>
+                            <h3 style="text-align:center">Agregar Trabajador</h3>
+
+                            <h5>Nómina:</h5>
+                            <input type="text" name="nominaTra" id="nominaTra" placeholder="nomina" size="40">
+
+                            <h5>Nombre Completo:</h5>
+                            <input type="text" name="nombreTra" id="nombreTra" placeholder="nombre" size="40">
+
+                            <h5>Grupo:</h5>
+                            <input type="text" name="grupoTra" id="grupoTra" placeholder="group" size="10">
+
+                            <h5>MAC Address del Dispositivo:</h5>
+                            <input type="text" name="macTra" id="macTra" placeholder="MAC Address" size="40">
+
+                            <h5>Subir foto:</h5>
+                            <input type="file" name="Foto">
+
+                            <br><br>
+
+                            <button class="btn btn-success" type="button" onclick="alta()">Dar de Alta</button>
+                        </form>
+                    </div>
 
 
-                </form>
             </div>
         </div>
 
         <br>
 
+        <!--División de la tabla, los datos los jala desde el admin.js en el llenarTabla()-->
         <div class="row" id="contenedor">
             <div class="col-sm-1"></div>
             <div class="col-sm-10">

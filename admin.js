@@ -1,14 +1,3 @@
-function ToggleDiv() {
-    var x = document.getElementById("Agregar");
-
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-
-function llenarTabla() {
     //Variable lista de empleados activos
     var head = [
         "Dispositivo",
@@ -27,7 +16,7 @@ function llenarTabla() {
         "Denisse Damian",
         "Luis Gonzalez",
         "Ruben Charles",
-        "July Duoley"
+        "July Dooley"
     ];
 
     var mail = [
@@ -37,10 +26,90 @@ function llenarTabla() {
         "July@example.com"
     ];
 
+    function ToggleSup() {
+
+        var agregarSup = document.getElementById("AgregarSupervisor");
+        var agregarSeg = document.getElementById("AgregarSeguridad");
+        var agregarAdmin = document.getElementById("AgregarAdministrador");
+        var agregarTra = document.getElementById("AgregarTrabajador");
+
+        if (agregarSup.style.display == "none") {
+            agregarSup.style.display = "block";
+            agregarSeg.style.display = "none";
+            agregarAdmin.style.display = "none";
+            agregarTra.style.display = "none";
+        } else {
+            agregarSup.style.display = "none";
+        }
+    }
+
+    function ToggleSeg() {
+
+        var agregarSup = document.getElementById("AgregarSupervisor");
+        var agregarSeg = document.getElementById("AgregarSeguridad");
+        var agregarAdmin = document.getElementById("AgregarAdministrador");
+        var agregarTra = document.getElementById("AgregarTrabajador");
+
+        if (agregarSeg.style.display == "none") {
+            agregarSeg.style.display = "block";
+            agregarSup.style.display = "none";
+            agregarAdmin.style.display = "none";
+            agregarTra.style.display = "none";
+        } else {
+            agregarSeg.style.display = "none";
+        }
+    }
+
+    function ToggleTra() {
+
+        var agregarSup = document.getElementById("AgregarSupervisor");
+        var agregarSeg = document.getElementById("AgregarSeguridad");
+        var agregarAdmin = document.getElementById("AgregarAdministrador");
+        var agregarTra = document.getElementById("AgregarTrabajador");
+
+        if (agregarTra.style.display == "none") {
+            agregarTra.style.display = "block";
+            agregarSup.style.display = "none";
+            agregarAdmin.style.display = "none";
+            agregarSeg.style.display = "none";
+        } else {
+            agregarTra.style.display = "none";
+        }
+    }
+
+    function ToggleAdmin() {
+
+        var agregarSup = document.getElementById("AgregarSupervisor");
+        var agregarSeg = document.getElementById("AgregarSeguridad");
+        var agregarAdmin = document.getElementById("AgregarAdministrador");
+        var agregarTra = document.getElementById("AgregarTrabajador");
+
+        if (agregarAdmin.style.display == "none") {
+            agregarAdmin.style.display = "block";
+            agregarSup.style.display = "none";
+            agregarSeg.style.display = "none";
+            agregarTra.style.display = "none";
+        } else {
+            agregarAdmin.style.display = "none";
+        }
+    }
+
+function ToggleDiv() {
+    var agregar = document.getElementById("Agregar");
+
+    if (agregar.style.display == "none") {
+        agregar.style.display = "block";
+    } else {
+        agregar.style.display = "none";
+    }
+}
+
+function llenarTabla() {
+
     var i;
     var tab = document.getElementById("tabla")
 
-    for (i=0; i<=employees.length+10; i++)
+    for (i=0; i<=employees.length-1; i++)
     {
         var row = tab.insertRow(i+1);
 
@@ -60,9 +129,18 @@ function llenarTabla() {
 
 }
 
-var nomina_trabajador;
+/* function alta(){
 
-function alta(){
-    nomina_trabajador = document.getElementById('Nomina').value;
+    // Hay que cambiarle el nombre del ID, porque al agregar las formas tuve que cambiar los ID's.
+    // Tambien no se que opinen de hacer diferentes funciones dependiendo de el usuario que se esté dando de alta.
+
+    var nombre_trabajador = $('#nombre').val();
+    var nomina_trabajador = $('#nomina').val();
+    var mac_trabajador = $('#mac').val();
+    var grupos_id_grupos = $('#inputGroupSelect01').val();
+
+    console.log(nombre_trabajador);
     console.log(nomina_trabajador);
-}
+    console.log(mac_trabajador);
+    console.log(grupos_id_grupos);
+} */
