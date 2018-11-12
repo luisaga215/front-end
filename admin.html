@@ -103,7 +103,8 @@
         }
 
         thead {
-            background-color:#323232
+            background-color:#323232;
+            text-align:center;
         }
 
         #contenedor {
@@ -117,6 +118,10 @@
 
         #AgregarAdministrador, #AgregarSeguridad, #AgregarTrabajador {
             display:none;
+        }
+
+        th {
+            text-align:center;
         }
 
 
@@ -161,6 +166,7 @@
                     <button type="button" class="btn btn-primary" onclick='ToggleTra()'>Trabajador</button>
                 </div>
 
+                <!--División con el form para dar de alta a un Supervisor-->
                 <div id="AgregarSupervisor" style="color:white">
                     <form>
                         <h3 style="text-align:center">Agregar Supervisor</h3>
@@ -181,14 +187,15 @@
                         <input type="text" name="macSup" id="macSup" placeholder="MAC Address" size="40">
 
                         <h5>Subir foto:</h5>
-                        <input type="file" name="Foto">
+                        <input type="file" name="fotoSup">
 
                         <br><br>
 
-                        <button class="btn btn-success" type="button" onclick="alta()">Dar de Alta</button>
+                        <button class="btn btn-success" type="button" onclick="altaSup()">Dar de Alta</button>
                     </form>
                 </div>
 
+                <!--División con el form para dar de alta a Seguridad-->
                 <div id="AgregarSeguridad" style="color:white">
                     <form>
                         <h3 style="text-align:center">Agregar Seguridad</h3>
@@ -203,7 +210,7 @@
                         <input type="password" name="passwordSeg" id="passwordSeg"  size="40">
 
                         <h5>Subir foto:</h5>
-                        <input type="file" name="Foto">
+                        <input type="file" name="fotoSeg">
 
                         <br><br>
 
@@ -211,6 +218,7 @@
                     </form>
                 </div>
 
+                <!--División con el form para dar de alta a un Administrador-->
                 <div id="AgregarAdministrador" style="color:white">
                     <form>
                         <h3 style="text-align:center">Agregar Administrador</h3>
@@ -222,10 +230,10 @@
                         <input type="text" name="nombreAdmin" id="nombreAdmin" placeholder="nombre" size="40">
 
                         <h5>Contraseña:</h5>
-                        <input type="password" name="nombreAdmin" id="passwordAdmin"  size="40" style="color:black">
+                        <input type="password" name="passwordAdmin" id="passwordAdmin"  size="40" style="color:black">
 
                         <h5>Subir foto:</h5>
-                        <input type="file" name="Foto">
+                        <input type="file" name="fotoAdmin">
 
                         <br><br>
 
@@ -233,6 +241,7 @@
                     </form>
                 </div>
 
+                <!--División con el form para dar de alta a un Trabajador-->
                 <div id="AgregarTrabajador" style="color:white">
                         <form>
                             <h3 style="text-align:center">Agregar Trabajador</h3>
@@ -250,7 +259,7 @@
                             <input type="text" name="macTra" id="macTra" placeholder="MAC Address" size="40">
 
                             <h5>Subir foto:</h5>
-                            <input type="file" name="Foto">
+                            <input type="file" name="fotoTra">
 
                             <br><br>
 
@@ -270,10 +279,11 @@
             <div class="col-sm-10">
                 <table class="table" id="tabla">
                     <thead>
-                        <tr>
+                        <tr style="text-align:center">
                             <th>Dispositivo</th>
                             <th>Nombre</th>
-                            <th>Correo</th>
+                            <th>Nómina</th>
+                            <th>Perfil</th>
                             <th></th>
                         </tr>
                     </thead>

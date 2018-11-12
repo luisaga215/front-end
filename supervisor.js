@@ -160,24 +160,4 @@ function resizeCanvas() {
 
 }
 
-//Generar puntos en el mapa
-function generatePoints() {
-    var i;
-    var canvs = document.getElementById("supCanva");
-    var ctx = canvs.getContext("2d");
-    var markImg = new Image();
-    var markImg2 = new Image();
-    markImg.src = "./assets/marker_red.png";
-    markImg2.src = "./assets/marker_green.png";
 
-    if(newPointsX != null || newPointsY != null){
-    for (i = 1; i <= employees.length; i++) {
-        if (i == activePoint) {
-            ctx.drawImage(markImg2, newPointsX[i - 1], newPointsY[i - 1], 20, 20);
-        } else {
-            ctx.drawImage(markImg, newPointsX[i - 1], newPointsY[i - 1], 20, 20);
-        }
-    }
-    }
-}
-setInterval(generatePoints, 500);

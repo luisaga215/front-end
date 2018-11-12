@@ -12,18 +12,25 @@
         "5C:29:1E:6C:2F"
     ];
 
-    var employees = [
+    var nombre = [
         "Denisse Damian",
         "Luis Gonzalez",
         "Ruben Charles",
         "July Dooley"
     ];
 
-    var mail = [
-        "Denisse@example.com",
-        "Luis@example.com",
-        "Ruben@example.com",
-        "July@example.com"
+    var nomina = [
+        "T011111111",
+        "T022222222",
+        "T033333333",
+        "T044444444"
+    ];
+
+    var perfil = [
+        "Administrador",
+        "Supervisor",
+        "Seguridad",
+        "Trabajador"
     ];
 
     function ToggleSup() {
@@ -107,9 +114,9 @@ function ToggleDiv() {
 function llenarTabla() {
 
     var i;
-    var tab = document.getElementById("tabla")
+    var tab = document.getElementById("tabla");
 
-    for (i=0; i<=employees.length-1; i++)
+    for (i=0; i<=nombre.length-1; i++)
     {
         var row = tab.insertRow(i+1);
 
@@ -117,30 +124,40 @@ function llenarTabla() {
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
 
         cell1.innerHTML += mac[i];
-        cell2.innerHTML += employees[i];
-        cell3.innerHTML += mail[i];
-        cell4.innerHTML += "<button class='button btn-warning'>Historial</button>";
-        cell4.innerHTML += "<button class='button btn-primary'>Modificar</button>";
-        cell4.innerHTML += "<button class='button btn-danger'>Eliminar</button>";
+        cell2.innerHTML += nombre[i];
+        cell3.innerHTML += nomina[i];
+        cell4.innerHTML += perfil[i];
+        cell5.innerHTML += "<button class='button btn-warning'>Historial</button>";
+        cell5.innerHTML += "<button class='button btn-primary'>Modificar</button>";
+        cell5.innerHTML += "<button class='button btn-danger' id='eliminarUsuario'>Eliminar</button>";
 
     }
 
 }
 
-/* function alta(){
+function altaSup(){
 
     // Hay que cambiarle el nombre del ID, porque al agregar las formas tuve que cambiar los ID's.
     // Tambien no se que opinen de hacer diferentes funciones dependiendo de el usuario que se esté dando de alta.
 
-    var nombre_trabajador = $('#nombre').val();
-    var nomina_trabajador = $('#nomina').val();
-    var mac_trabajador = $('#mac').val();
-    var grupos_id_grupos = $('#inputGroupSelect01').val();
+    nomina += $('#nominaSup').val();
+    nombre += $('#nombreSup').val();
+    mac += $('#macSup').val();
+    // var password_trabajador = $('#passwordTra').val();
+    // var grupos_id_grupos = $('#grupoSup').val();
 
-    console.log(nombre_trabajador);
-    console.log(nomina_trabajador);
-    console.log(mac_trabajador);
-    console.log(grupos_id_grupos);
-} */
+    /*
+    employees.push(nombre_trabajador);
+    nomina.push(nomina_trabajador);
+    mac.push(mac_trabajador);
+    */
+
+    console.log(nombre.toString());
+    console.log(nomina.toString());
+    console.log(mac.toString());
+
+    // location.reload();
+}
