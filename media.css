@@ -42,6 +42,9 @@
     #searchBar{
         padding-top: 1em;
     }
+    .sel{
+        width: 90%;
+    }
 
 }
 
@@ -82,6 +85,9 @@
     }
     #searchBar{
         padding-top: 1em;
+    }
+    .sel{
+        width: 75%;
     }
 
 }
@@ -126,6 +132,9 @@
     #div_activos {
         height: 425px;
     }
+    .sel{
+        width: 60%;
+    }
 
 }
 
@@ -167,6 +176,10 @@
 
     #div_activos {
         height: 440px;
+    }
+
+    .sel{
+        width: 60%;
     }
 
 }
